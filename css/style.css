@@ -1,47 +1,52 @@
-ul{
-	padding: 10px;
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
 }
-figure,figcaption,img{
-	
-	border:1px solid gray;
-	margin: 15px 20px;
-	box-sizing: border-box;
+
+ul{
+	margin: 0;
+	padding: 10px;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 0 0 1rem 0;
+}
+
+figure {
+	margin: 0;
+}
+
+picture{
+	width: 90%;
+	padding: 0; 	
 }
 
 img{
 	width: 90%;
-	height: auto;	
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
-ul li{
-	list-style-type: none;
-}
+
+
 /*@media rule and media attribute in <picture> do not exlude each other - thery work toghether.*/
-
-@media screen and (max-width:600px){
-	ul{
-		padding: 10px;
+@media screen and (min-width:600px){
+	
+	li {
+		float: left;
+		width: 50%;
 	}
-	picture{
-		width: 90%;
-		margin: -9px -9px;
-		padding: 0; 
-		
-	}
-	img{
-		width: 90%;
-		height: auto;	
-	}
-	ul li{
-		list-style-type: none;
-	}
+	
 }
 
-@media (min-width:600px) and (max-width:1200px){
-	ul{		
-		width: 90%;
-	}
-	figure,figcaption,img{
-		float: right;
+@media (min-width:1200px) {
+	
+	figure,
+	figcaption,
+	img{
+		float: left;
 		border:1px solid gray;
 		padding: 0;
 		margin: 15px;
@@ -50,7 +55,7 @@ ul li{
 	img{
 		width: 90%;
 		height: auto;	
-		float: right;
+		float: left;
 	}
 	
 	ul li{
@@ -61,29 +66,31 @@ ul li{
 }
 
 @media screen and (min-width:1200px){
-	ul{		
-		width: 90%;
-	}
-	figure,figcaption,img{
 	
-		border:1px solid gray;
-		padding: 0;
-		margin: 10px;
-		box-sizing: border-box;
-	}
-	
-	ul li{
+	figure,
+	figcaption,
+	img{
 		float: right;
-		width: 22.5%;
-		list-style-type: none;
+		border: none;
+		padding: 0px;
+		margin: 0px;
+		box-sizing: border-box;
 	}
 	img{
 		width: 90%;
 		height: auto;	
+		float: left;
 	}
-	img:nth-child(n+1){
-		clear: right;
-		width: 90%;
-		height: auto;	
+	
+	ul li{
+		float: left;
+		width: 24.5%;
+		list-style-type: none;
+		padding: 3px;
 	}
+	
+	img::nth-child(2n){
+		float:left;
+	}
+	
 }
